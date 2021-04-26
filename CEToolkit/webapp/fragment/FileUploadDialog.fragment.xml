@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:uni="sap.ui.unified">
+	<Dialog	title="File Uploader">
+        <VBox class="sapUiSmallMarginBeginEnd">
+            <uni:FileUploader fileType="XLSX,xlsx" change="onFileUploadChange" class="sapUiSmallMargin"/>            
+            <Label text="Which operation would you like to perform on upload?" class="sapUiTinyMarginBottom"/>
+            <RadioButtonGroup >
+                <RadioButton text="Create (Upload template with data)" selected="true" />
+                <RadioButton text="Update (Upload downloaded data file)" />                
+            </RadioButtonGroup>            
+        </VBox>          
+        <buttons>
+            <Button text="Cancel" press=".onUploaderClose"/>
+            <Button text="Upload" press=".onUploadFile" type="Emphasized"/> 
+        </buttons>                
+	</Dialog>
+</core:FragmentDefinition>

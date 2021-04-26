@@ -1,0 +1,27 @@
+{
+    "xsappname": "mta_CEToolkit",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of called application",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.View",
+            "description": "View"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Token_Exchange",
+            "description": "UAA",
+            "scope-references": [
+                "uaa.user"
+            ]
+        },
+        {
+            "name": "S4hcUtilityToolkit",
+            "description": "Security Role for S4HANA Cloud utility toolkit",
+            "scope-references": [
+                "$XSAPPNAME.View"
+            ]
+        }
+    ]
+}

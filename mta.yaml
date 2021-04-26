@@ -1,0 +1,69 @@
+_schema-version: '3.2'
+ID: mta_CEToolkit
+version: 0.0.1
+modules:
+  - name: mta-cetoolkit-approuter
+    type: approuter.nodejs
+    path: mta-cetoolkit-approuter
+    requires:
+      - name: mta_CEToolkit_html_repo_runtime
+      - name: dest_mta_CEToolkit
+      - name: conn_mta_CEToolkit
+      - name: uaa_mta_CEToolkit
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+  - name: mta_CEToolkit_ui_deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: mta_CEToolkit_html_repo_host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - CEToolkit-content.zip
+          name: CEToolkit
+          target-path: resources/
+  - name: CEToolkit
+    type: html5
+    path: CEToolkit
+    build-parameters:
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms: []
+resources:
+  - name: mta_CEToolkit_html_repo_runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
+  - name: mta_CEToolkit_html_repo_host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+  - name: uaa_mta_CEToolkit
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_mta_CEToolkit
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service
+  - name: conn_mta_CEToolkit
+    parameters:
+      service-plan: lite
+      service: connectivity
+    type: org.cloudfoundry.managed-service
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install

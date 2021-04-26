@@ -1,0 +1,121 @@
+/* Enter your custom styles here */
+
+.NodeTitle{
+	text-align: left;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #346187;
+    margin-bottom: 30px;
+}
+
+.sapMLnk {
+    color: #0070b1;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    font-family: "72fallback","72","72full",Arial,Helvetica,sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 0.8rem;
+    cursor: pointer;
+}
+
+.LandingText{
+	font-size: 15.5px;
+    font-weight: 500;
+    color: black;
+    margin-top: 2px;
+    margin-left: 18px;
+    margin-bottom: 2px;
+}
+
+.WhiteBackground{
+	background-color: white;
+}
+
+.ObjectList{
+	font-size: larger;
+    text-align: left;
+    font-weight: 600;
+    color: #346187;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ObjectList2{
+	font-size: large;
+    text-align: left;
+    font-weight: 500;
+    color: #346187;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ObjectList3{
+	font-size: unset;
+    text-align: left;
+    font-weight: 500;
+    color: #346187;;
+}
+
+#container-CEToolkit---Main--pageBarId{
+	background-color: #32363a;
+}
+/* .sapMIBar-CTX .sapMTitle { */
+#container-CEToolkit---Main--Title{
+    color: white;
+    text-shadow: none;
+    font-weight: 700;
+    font-size: large;
+}
+
+.WhiteFont{
+	color: #fff
+}
+
+.sapMSLITitle, .sapMSLITitleOnly {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+:not(.sapMBtnDisabled) .sapMBtnTransparent>.sapMBtnIcon {
+    color: #fff;
+    font-size: 1.300rem;
+}
+
+.sapMBtn:hover:not(.sapMBtnDisabled)>.sapMBtnHoverable.sapMBtnTransparent:not(.sapMBtnActive):not(.sapMToggleBtnPressed)>.sapMBtnIcon, *.sapMBtn:hover:not(.sapMBtnDisabled)>span.sapMBtnInner.sapMBtnTransparent:not(.sapMBtnActive):not(.sapMToggleBtnPressed)>.sapMBtnIcon, :not(.sapMBtnDisabled):not(.sapMSBActive)>span.sapMBtnInner.sapMBtnTransparent:not(.sapMBtnActive):not(.sapMToggleBtnPressed):hover>.sapMBtnIcon {
+    color: white;
+}
+
+.LabelPadding{
+	padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+	/*font-size: medium;*/
+}
+
+.sapMTB-Transparent-CTX.sapMTB {
+    padding-left: 0;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: #346187;
+    text-shadow: 0 0 0.125rem #fff;
+    font-weight: 900;
+    font-size: 1rem;
+    padding-left: 15px;
+}
+
+.toolkitText{
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+
+.LoginText{
+    font-weight: 600;
+    font-size: 1rem;
+}

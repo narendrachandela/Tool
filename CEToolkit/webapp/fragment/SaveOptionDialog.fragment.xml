@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog	title="Save Options">
+        <VBox class="sapUiSmallMarginBeginEnd">
+            <Label text="Which operation would you like to perform?" class="sapUiSmallMarginTopBottom"/>
+            <RadioButtonGroup>
+                <RadioButton text="Update selection" selected="true" />
+                <RadioButton text="Delete selection" />
+                <RadioButton text="Delete all records" />
+            </RadioButtonGroup>
+        </VBox>
+        <beginButton>
+            <Button text="Cancel" press=".onSaveCancel"/>
+        </beginButton>  
+        <endButton>            
+            <Button text="Submit" press=".onSaveSubmit" type="Emphasized"/>
+        </endButton>                
+	</Dialog>
+</core:FragmentDefinition>

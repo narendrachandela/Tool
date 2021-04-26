@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog	title="Login Details">
+        <VBox class="sapUiSmallMarginBeginEnd">
+            <Label text="Enter credentials to access the application." class="sapUiSmallMarginTopBottom LoginText"/>
+            <Label text="User Id:"/>
+            <Input id="userInputId" class="sapUiSmallMarginBottom"/>
+            <Label text="Password:"/>
+            <Input id="pwdInputId" type="Password" submit=".onLoginPress" class="sapUiSmallMarginBottom"/>
+        </VBox>
+        <endButton>
+            <Button text="Login" press=".onLoginPress" type="Emphasized"/>
+        </endButton> 
+	</Dialog>
+</core:FragmentDefinition>

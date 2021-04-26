@@ -1,0 +1,8 @@
+/node_modules/
+package-lock.json
+/dist/
+/.vscode/
+/*-content.zip/ 
+
+# auto generated wildcard
+mta_CEToolkit/CEToolkit/.env14

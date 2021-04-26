@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog	title="Submit Options">
+        <VBox class="sapUiSmallMarginBeginEnd">
+            <Label text="" />
+            <RadioButtonGroup>
+                <RadioButton text="Submit all" selected="true" />
+                <RadioButton text="Submit selection" />
+            </RadioButtonGroup>
+        </VBox>
+        <beginButton>
+            <Button text="Cancel" press=".onSaveCancel"/>
+        </beginButton>  
+        <endButton>            
+            <Button text="Submit" press=".onSaveSubmit" type="Emphasized"/>
+        </endButton>                
+	</Dialog>
+</core:FragmentDefinition>

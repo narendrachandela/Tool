@@ -1,0 +1,200 @@
+<mvc:View controllerName="s4hana.CEToolkit.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" enableScrolling="false">
+					<customHeader>
+						<Bar id="pageBarId" >
+							<contentLeft>
+								<Button icon="sap-icon://home" press="onHomePress" type="Transparent"/>
+								<Image src="./files/InfosysLogo.png" height="35px" width="70px"/> 
+							</contentLeft>
+							<contentMiddle>
+								<Title class="WhiteFont" id="Title" text="S/4 HANA Cloud Essentials Toolkit"/>
+							</contentMiddle>
+						</Bar>
+					</customHeader>
+					<content>
+						<SplitContainer id="splitContainerId" initialDetail="detail" initialMaster="master">
+							<masterPages>
+								<Page id="master" backgroundDesign="List" class="sapUiStdPage">
+									<Tree id="treeId" items="{path: '/'}" mode="SingleSelectMaster" includeItemInSelection="true" 
+										itemPress="onOperationSelection">
+										<headerToolbar>
+											<OverflowToolbar>
+												<content>
+													<Button text="Toolkit" press="onToolkitPress" type="Transparent" class="toolkitText"/>
+													<ToolbarSpacer/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<StandardTreeItem title="{text}" icon="{ref}" type="Active"/>
+									</Tree>
+								</Page>
+							</masterPages>
+							<detailPages>
+								<Page id="infoDetailId" backgroundDesign="Solid" class="WhiteBackground" >
+									<Image src="./files/LandingInfoAP.PNG"/>                                    
+								</Page>
+								<Page id="tableDetailId" backgroundDesign="Solid" enableScrolling="false">
+									<HBox class="sapUiSmallMarginTop">
+										<Label class="LabelPadding" text="Enter Object" id="InputLabelId" labelFor="InputId" width="200px"/>
+										<Input class="InputPadding" id="InputId" placeholder="Enter CBO name....." width="300px"/>
+										<Button id="ButtonId" text="Upload" icon="sap-icon://download" press="onButtonPress" 
+										width="180px" class="sapUiSmallMarginBegin"/>
+										<Button id="DownloadButtonId" text="Download Data" icon="sap-icon://excel-attachment" press="onDownloadButtonPress"
+										 width="180px" class="sapUiSmallMarginBegin"/>
+                                         <!-- <Button id="test" text="Download" icon="sap-icon://add" press="onGetAPIs"
+										 width="120px" class="sapUiSmallMarginBegin"/> -->
+									</HBox>
+									<Bar id="tableBarId" class="sapUiSmallMarginTop"></Bar>
+									<ScrollContainer height="77%" width="100%" vertical='true' horizontal='true' focusable="true">
+										<Table id="dataTableId" sticky="ColumnHeaders" growing="true" growingScrollToLoad="true" growingThreshold="100"
+										fixedLayout="false" showNoData="false"></Table>
+									</ScrollContainer>
+								</Page>
+								<Page id="nodeDetailId" backgroundDesign="Solid" >
+									
+									<VBox id="infoCBONodeId" visible="false" class="sapUiMediumMargin">
+										<Text text="Custom Business Objects (CBO)" class="NodeTitle"/>
+										<HBox>
+											<Text text="What SAP Offers: " width="170px" class="ObjectList"/>
+											<Text text="You can create entry one by one using UI generated over Custom Business Object, but there is no provision for Mass Upload /Update /Delete /Download of data for CBO." 
+											class="sapUiSmallMarginTopBottom"/>
+										</HBox>
+                                        <HBox>
+											<Text text="Toolkit Offering: " width="170px" class="ObjectList"/>
+											<Text text="Using this toolkit, you can perform bulk data upload, update, delete operation on Custom Business Object data along with data download feature." 
+											class="sapUiSmallMarginTopBottom"/>
+										</HBox>
+										<!-- <Text text="Using this toolkit, you can perform bulk data upload, update on Custom Business Objects along with download feature." class="sapUiSmallMarginBottom"/> -->
+										
+										<Text text="Features:" class="ObjectList"/>                                        
+										<Text text="Create Data:" class="ObjectList2"/>
+										<Text text="1. Go to 'Download Template / Data' option, enter CBO name and press 'Download Template' button to download the excel template." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Fill up the excel template with data." class="sapUiTinyMarginBottom"/>
+										<Text text="3. Go to 'Upload Data' option, enter CBO name and select 'Upload Data File' button. A popup will appear to select the file." class="sapUiTinyMarginBottom"/>
+										<Text text="4. Select the populated excel file, choose 'Create' option and click on 'Upload' button. The file data will be visible to the user in the application." class="sapUiTinyMarginBottom"/>
+                                        <Text text="5. Verify the data, select the records to be submitted and click on 'Save' icon to submit the data to the system." class="sapUiTinyMarginBottom"/>
+										<Text text="Update Data:" class="ObjectList2"/>
+                                        <Text text="Data Update can be done in two ways: using 'Display / Edit / Delete Data' option and using 'Upload Data' option."/>
+                                        <Text text="A. Update using 'Display / Edit / Delete Data' option:" class="sapUiTinyMarginTopBottom ObjectList3"/>
+										<Text text="1. Go to 'Display / Edit / Delete Data' option, enter the CBO name and click on 'Display Data' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Choose 'Edit' icon, edit the required fields and click on 'Save' icon. A popup will appear to select operation." class="sapUiTinyMarginBottom"/>
+                                        <Text text="3. Select 'Update selection' option in the popup and click on 'Submit' button." class="sapUiTinyMarginBottom"/>
+                                        <Text text="B. Update using 'Upload Data' option:" class="sapUiTinyMarginTopBottom ObjectList3"/>
+                                        <Text text="1. Go to 'Download Template / Data' option, enter CBO name and press 'Download Data' button to download CBO data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Update the records in the excel sheet." class="sapUiTinyMarginBottom"/>
+										<Text text="3. Go to 'Upload Data' option and upload the file by selecting 'Update' option. The uploaded data will be visible to the user in the application." class="sapUiTinyMarginBottom"/>
+										<Text text="4. Verify the data, select the records to be submitted and click on 'Save' icon to submit the data to the system." class="sapUiTinyMarginBottom"/>                                        
+                                        <Text text="Delete Data:" class="ObjectList2"/>                                        
+										<Text text="1. Go to 'Display / Edit / Delete Data' option, CBO name and click on 'Display Data' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Choose 'Edit' icon, select the records to be deleted and click on 'Save' icon." class="sapUiTinyMarginBottom"/>
+                                        <!--<Text text="3. " class="sapUiTinyMarginBottom"/>-->
+                                        <Text text="3. A popup will appear to select operation with 2 delete options. Select 'Delete selection' or 'Delete all records' depending on whether you wish to delete a few or all records and click on 'Submit' button." class="sapUiTinyMarginBottom"/>
+                                        <Text text="Display and Download Data:" class="ObjectList2"/>
+										<Text text="1. Data Display - Go to 'Display / Edit / Delete Data' option, enter the CBO name and click on 'Display Data' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Data Download - This feature is available under 'Display / Edit / Delete Data' option as well as under 'Download Template / Data' option. Enter the CBO name and click on 'Download Data' button." class="sapUiTinyMarginBottom"/>
+
+										
+										<Text text="Points to Note:" class="ObjectList"/>
+										<Text text="1. Custom Business Object should have a communication arrangement." class="sapUiTinyMarginBottom"/>
+										<Text text="2. All the date field inputs should be in format 'mm/dd/yyyy' or 'mmm dd yyyy'." class="sapUiTinyMarginBottom"/>
+										<Text text="3. All time inputs should be in format 'HH:mm:ss'." class="sapUiTinyMarginBottom"/>
+                                        <Text text="4. CBO name is case sensitive." class="sapUiTinyMarginBottom"/>
+                                        <Text text="5. This utility supports flat CBO structures only." class="sapUiTinyMarginBottom"/>
+									</VBox>
+									
+									<VBox id="infoAPINodeId" visible="false" class="sapUiMediumMargin">
+										<Text text="REST APIs" class="NodeTitle"/>
+										<HBox>
+											<Text text="What SAP Offers: " width="170px" class="ObjectList"/>
+											<Text text="SAP provides Migration Cockpit for Data Load and where Migration Object is not available we have to use whitelisted Data Load APIs." 
+											class="sapUiSmallMarginTopBottom"/>
+										</HBox>
+                                        <HBox>
+											<Text text="Toolkit Offering: " width="170px" class="ObjectList"/>
+											<Text text="Using this utility you can perform Create/Update/Delete/Display operations on REST APIs dynamically based on API and EntitySet." 
+											class="sapUiSmallMarginTopBottom"/>
+										</HBox>
+										<!-- <Text text="Using this utility you can perform Create/Update/Display operations on REST APIs dynamically based on API and entity set" class="sapUiSmallMarginBottom"/> -->
+										
+										<Text text="Features:" class="ObjectList"/>
+										<Text text="Create Data:" class="ObjectList2"/>
+										<Text text="1. Go to 'Download Template / Data' option, enter the REST API name with EntitySet name (Format: 'API Name/EntitySet Name') and click on 'Download Template' button to download the excel template." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Fill up the excel template with data." class="sapUiTinyMarginBottom"/>
+										<Text text="3. Go to 'Upload Data' option and upload file by selecting 'Create' option. The uploaded data will be visible to the user in the application." class="sapUiTinyMarginBottom"/>
+										<Text text="4. Verify the data, select the records to be uploaded and click on 'Save' icon to submit the data to the system." class="sapUiTinyMarginBottom"/>
+										<Text text="Update Data:" class="ObjectList2"/>
+                                        <Text text="Data Update can be done in two ways: using 'Display / Edit / Delete Data' option and using 'Upload Data' option."/>
+                                        <Text text="A. Update using 'Display / Edit / Delete Data' option:" class="sapUiTinyMarginTopBottom ObjectList3"/>
+										<Text text="1. Go to 'Display / Edit / Delete Data' option, enter the API name with EntitySet name and click on 'Display' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Choose 'Edit' icon and edit the required fields and click on 'Save' icon. A popup will appear to select operation." class="sapUiTinyMarginBottom"/>
+										<Text text="3. Select 'Update seceltion' option and click 'Submit' button to submit modifications." class="sapUiTinyMarginBottom"/>
+                                        <Text text="B. Update using 'Upload Data' option:" class="sapUiTinyMarginTopBottom ObjectList3"/>
+                                        <Text text="1. Go to 'Download Template / Data' option, enter the API/ EntitySet name and press 'Download Data' button to download the API data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Update the records in the excel sheet." class="sapUiTinyMarginBottom"/>
+										<Text text="3. Go to 'Upload Data' option and upload the file by selecting 'Update' option. The uploaded data will be visible to the user in the application." class="sapUiTinyMarginBottom"/>
+										<Text text="4. Verify the data, select the records to be submitted and click on 'Save' icon to submit the data to the system." class="sapUiTinyMarginBottom"/>
+                                        <Text text="Delete Data:" class="ObjectList2"/>                                        
+										<Text text="1. Go to 'Display / Edit / Delete Data' option, API/EntitySet name and click on 'Display Data' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Choose 'Edit' icon. Select the records to be deleted and click on 'Save' icon." class="sapUiTinyMarginBottom"/>
+                                        <!--<Text text="3.  " class="sapUiTinyMarginBottom"/>-->
+                                        <Text text="3. A popup will appear to select operation with 2 delete options. Select 'Delete selection' or 'Delete all records' depending on whether you wish to delete a few or all records and click on 'Submit' button." class="sapUiTinyMarginBottom"/>
+                                        <Text text="Display and Download Data:" class="ObjectList2"/>
+										<Text text="1. Data Display - Go to 'Display / Edit / Delete Data' option, enter the API/EntitySet name and click on 'Display Data' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. Data Download - This feature is available under 'Display / Edit / Delete Data' option as well as under 'Download Template / Data' option. Enter the API/EntitySet name and click on 'Download Data' button." class="sapUiTinyMarginBottom"/>
+
+										<Text text="Points to Note:" class="ObjectList"/>
+										<Text text="1. REST APIs should have a communication arrangement." class="sapUiTinyMarginBottom"/>
+										<Text text="2. All the date field inputs should be in format 'mm/dd/yyyy' or 'mmm dd yyyy'." class="sapUiTinyMarginBottom"/>
+										<Text text="3. All time inputs should be in format 'HH:mm:ss'." class="sapUiTinyMarginBottom"/>
+                                        <Text text="4. API name and Entity set name are case sensitive and should be entered in the format 'API Name/ EntitySet Name'." class="sapUiTinyMarginBottom"/>
+                                        <Text text="5. This utility supports nested API structures upto 1 level only." class="sapUiTinyMarginBottom"/>
+                                    </VBox>
+									
+									<VBox id="infoCDSNodeId" visible="false" class="sapUiMediumMargin">
+										<Text text="Custom CDS Views" class="NodeTitle"/>
+										<HBox>
+											<Text text="What SAP Offers: " width="170px" class="ObjectList"/>
+											<Text text="You can only preview the data and there is no provision to download the data as of today . Downloading data is quite common since Business analysts would generally analyze the data using Microsoft options." 
+											class="sapUiSmallMarginTopBottom"/>
+										</HBox>
+                                        <HBox>
+											<Text text="Toolkit Offering: " width="170px" class="ObjectList"/>
+											<Text text="Using this utility you can view/ download the data into an excel sheet from Custom CDS Views." 
+											class="sapUiSmallMarginTopBottom"/>
+										</HBox>
+										<!-- <Text text="Using this utility you can view/ download the data into an excel sheet from Custom CDS Views." class="sapUiSmallMarginBottom"/> -->
+										
+										<Text text="Features:" class="ObjectList"/>
+										<Text text="Download Data:" class="ObjectList2"/>
+										<Text text="Go to 'Download Data' option, enter the custom CDS view name and click on 'Download Data' button to download the data." class="sapUiTinyMarginBottom"/>
+										<Text text="Display Data:" class="ObjectList2"/>
+										<Text text="1. Go to 'Display Data' option, enter the CDS view name and click on 'Display Data' button to get tabular display of data." class="sapUiTinyMarginBottom"/>
+										<Text text="2. You can even download data using the 'Download Data' button on the screen." class="sapUiTinyMarginBottom"/>
+										
+										<Text text="Points to Note:" class="ObjectList"/>
+										<Text text="1. CDS views should have a communication arrangement." class="sapUiTinyMarginBottom"/>
+										<Text text="2. CDS name is case sensitive." class="sapUiTinyMarginBottom"/>
+									</VBox>
+								</Page>
+								<Page id="toolkitDetailId" backgroundDesign="Solid" >                                   
+									<VBox class="sapUiMediumMargin">
+										<Text text="Welcome to Infosys S/4HANA Cloud Essentials Toolkit!" class="NodeTitle"/>
+										<Text text="Single stop for all accelerators in Cloud space!!!" class="sapUiSmallMarginBottom"/>
+										<Text text="We have below utilities available for Cloud Essentials covering the following objects which otherwise would require Manual/Development Efforts." class="sapUiMediumMarginBottom"></Text>
+										<Text text="1. Custom Business Objects(CBO)" class="ObjectList" ></Text>
+										<Text text="2. REST APIs" class="ObjectList"></Text>
+										<Text text="3. Custom CDS Views" class="ObjectList"></Text>
+									</VBox>
+								</Page>
+							</detailPages>
+						</SplitContainer>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

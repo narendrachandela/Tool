@@ -1,0 +1,24 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [    
+    {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/S4HC_Sandbox/(.*)$",
+      "destination": "S4HC_Sandbox",
+      "target": "$1"
+    },
+    
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa",
+      "scope": ["$XSAPPNAME.View"]
+    }
+  ]
+}

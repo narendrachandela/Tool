@@ -1,0 +1,63 @@
+ [
+	{
+		"id": "CBONodeId",
+		"text": "CBO (Custom Business Objects)",
+		"nodes":
+		[
+			{
+				"id": "CBODownloadNodeId",
+				"text": "Download Template / Data",
+				"ref": "sap-icon://download"
+			},
+			{
+				"id": "CBOUploadNodeId",
+				"text": "Upload Data",
+				"ref": "sap-icon://create"
+			},
+			{
+				"id": "CBODisplayNodeId",
+				"text": "Display / Edit / Delete Data",
+				"ref": "sap-icon://edit"
+			}
+		]
+	},
+	{
+		"id": "APINodeId",
+		"text": "REST APIs",
+		"nodes":
+		[
+			{
+				"id": "APIDownloadNodeId",
+				"text": "Download Template / Data",
+				"ref": "sap-icon://download"
+			},
+			{
+				"id": "APIUploadNodeId",
+				"text": "Upload Data",
+				"ref": "sap-icon://create"
+			},
+			{
+				"id": "APIDisplayNodeId",
+				"text": "Display / Edit / Delete Data",
+				"ref": "sap-icon://edit"
+			}
+		]
+	},
+	{	
+		"id": "CDSNodeId",
+		"text": "Custom CDS Views",
+		"nodes":
+		[
+			{
+				"id": "CDSDownloadNodeId",
+				"text": "Download Data",
+				"ref": "sap-icon://download"
+			},
+			{
+				"id": "CDSDisplayNodeId",
+				"text": "Display Data",
+				"ref": "sap-icon://display"
+			}
+		]
+	}
+]
